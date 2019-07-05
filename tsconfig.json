@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src/",
+    "outDir": "./lib",
+
+    "target": "esnext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+
+    "declaration": true,
+    "importHelpers": true,
+
+    "downlevelIteration": true,
+    "newLine": "lf",
+    "strict": true,
+
+    "baseUrl": "./src/",
+    "paths": {
+      "commonly/*": [ "*" ]
+    }
+  },
+
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}
