@@ -1,0 +1,22 @@
+{
+  "name": "commonly",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/commonly-lab/commonly.git"
+  },
+  "keywords": [
+    "commons"
+  ],
+  "author": "Mateusz Pietrzak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/commonly-lab/commonly/issues"
+  },
+  "homepage": "https://github.com/commonly-lab/commonly#readme"
+}
