@@ -8,16 +8,14 @@
     "moduleResolution": "node",
 
     "declaration": true,
+    "declarationMap": true,
+
     "importHelpers": true,
 
     "downlevelIteration": true,
     "newLine": "lf",
     "strict": true,
 
-    "baseUrl": "./src/",
-    "paths": {
-      "commonly/*": [ "*" ]
-    },
     "lib": [
       "es2016"
     ]

@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
+  "typings": "./lib/Reflect/index.d.ts",
   "scripts": {
+    "compile": "npm run clean && tsc --build",
+    "clean": "tsc --build --clean",
+    "docs": "npm run compile && api-extractor run --local --verbose && api-documenter markdown --input-folder ./temp --output-folder ./docs",
     "test": "jest",
     "test:watch": "jest --watch",
     "coverage": "jest --coverage"
@@ -28,5 +32,9 @@
     "jest-plugin-context": "2.9.0",
     "tslib": "1.10.0",
     "typescript": "3.5.3"
+  },
+  "dependencies": {
+    "@microsoft/api-documenter": "^7.4.2",
+    "@microsoft/api-extractor": "^7.4.1"
   }
 }
