@@ -5,10 +5,10 @@ import Nil         from "../../Type/Nil"
 
 
 /**
- * Check if a given value is a nil.
+ * Check if a given value is a {@link @commonly/type:Nil | Nil} (either an undefined or a null).
  *
  * @param value - is a value to check
- * @returns a boolean whether the value is a nil or not
+ * @returns a boolean whether the value is a {@link @commonly/type:Nil | Nil} or not
  *
  * @example
  * ```

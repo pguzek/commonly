@@ -7,6 +7,22 @@ import Primitive from "../../Type/Primitive"
 
 
 
+/**
+ * Check if a given value is a {@link @commonly/type:Primitive | Primitive}.
+ *
+ * @param value - is a value to check
+ * @returns a boolean whether the value is a {@link @commonly/type:Primitive | Primitive} or not
+ *
+ * @example
+ * ```
+ *  import { isPrimitive } from "commonly/reflect"
+ *
+ *  isPrimitive(undefined)   //-> true
+ *  isPrimitive(null)        //-> true
+ *  isPrimitive(NaN)         //-> true
+ *  isPrimitive([])          //-> false
+ * ```
+ */
 const isPrimitive = (value: unknown | Primitive): value is Primitive => {
     return isNil(value) || isBoolean(value) || isNumber(value) || isString(value) || isSymbol(value)
 }
