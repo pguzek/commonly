@@ -1,5 +1,6 @@
 /**
- * Check if a given value is a null.
+ * Check if a given value is
+ * a {@link https://developer.mozilla.org/en-US/docs/Glossary/null | null}.
  *
  * @param value - is a value to check
  * @returns a boolean whether the value is a null or not

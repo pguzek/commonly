@@ -3,6 +3,7 @@ import isUndefined from "../isUndefined/isUndefined"
 import Nil         from "../../Type/Nil"
 
 
+
 /**
  * Check if a given value is a nil.
  *

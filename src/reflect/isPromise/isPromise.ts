@@ -1,5 +1,6 @@
 /**
- * Check if a given value is a Promise.
+ * Check if a given value is
+ * a {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise | Promise}.
  *
  * @param value - is a value to check
  * @returns a boolean whether the value is a Promise or not

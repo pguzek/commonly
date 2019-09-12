@@ -1,8 +1,10 @@
 import isNull from "../isNull/isNull"
 
 
+
 /**
- * Check if a given value is an Object.
+ * Check if a given value is
+ * an {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object | Object}.
  *
  * @param value - is a value to check
  * @returns a boolean whether the value is an Object or not

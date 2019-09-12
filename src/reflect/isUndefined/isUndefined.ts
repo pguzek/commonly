@@ -1,5 +1,6 @@
 /**
- * Check if a given value is an undefined.
+ * Check if a given value is
+ * an {@link https://developer.mozilla.org/en-US/docs/Glossary/undefined | undefined}.
  *
  * @param value - is a value to check
  * @returns a boolean whether the value is an undefined or not

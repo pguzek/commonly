@@ -1,5 +1,6 @@
 /**
- * Check if a given value is an Error.
+ * Check if a given value is
+ * an {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error | Error}.
  *
  * @param value - is a value to check
  * @returns a boolean whether the value is an Error or not
