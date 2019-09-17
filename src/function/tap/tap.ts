@@ -14,7 +14,4 @@ const tap = <TValue>(f: (value: TValue) => TValue, value: TValue): TValue => {
 
 
 
-export default <TapFunction>curry(tap, [
-    (f, value) => tap(f, value),
-    (f) => (value) => tap(f, value)
-])
+export default <TapFunction>curry(tap)
