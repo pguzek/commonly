@@ -8,7 +8,7 @@ import curry from "./curry"
 
 
 describe("function curry(f)", () => {
-    context("f is a unary function", () => {
+    context("f is an unary function", () => {
         const f: UnaryFunction<number, number> = (a) => a
 
         context("is not curried", () => {

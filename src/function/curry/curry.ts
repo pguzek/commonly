@@ -1,24 +1,23 @@
-import CurriedVariadicFunction from "../../type/CurriedVariadicFunction"
+import CurriedFunction from "../../type/CurriedFunction"
 import VariadicFunction from "../../type/VariadicFunction"
+import partial from "../partial/partial"
 
 
-
-interface CurriedSignature<
-    TResult,
-    TParameters extends unknown[]
-> extends
-    VariadicFunction<
-        CurriedSignature<
-            TResult,
-            [ TParameters[1], TParameters[2], TParameters[3] ]
-        > | TResult, TParameters
-    > {}
 
 const curry = <TResult, TParameters extends unknown[]>(
-    f: (...varargs: TParameters) => TResult,
-    signatures: CurriedSignature<TResult, TParameters>[]
-): CurriedVariadicFunction<TResult, TParameters> => {
-    return null as any
+    f: VariadicFunction<TResult, TParameters>
+): CurriedFunction<TResult, TParameters> => {
+    // @ts-ignore
+    const curried = (...varargs: TParameters) => {
+        if (varargs.length < f.length) {
+            return partial(curried, ...varargs)
+        } else {
+            return f(...varargs)
+        }
+    }
+
+    // @ts-ignore
+    return curried
 }
 
 

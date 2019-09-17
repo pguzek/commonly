@@ -12,7 +12,7 @@ type TupleShift<TTuple extends unknown[]> =
         ? [ TTuple[1] ]
         :
     TTuple extends [ unknown ]
-        ? []
+        ? [ void ]
         :
     never
 
