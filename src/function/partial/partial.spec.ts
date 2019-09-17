@@ -28,7 +28,7 @@ describe("function partial(f, ...applied)", () => {
             const subject = partial(f, 1)
 
             it("should return the same result as an f function", () => {
-                expect(subject(1))
+                expect(subject(2))
                     .toEqual(f(1, 2))
             })
         })
@@ -50,7 +50,7 @@ describe("function partial(f, ...applied)", () => {
             const subject = partial(f, 1)
 
             it("should return the same result as an f function", () => {
-                expect(subject(1, 2))
+                expect(subject(2, 3))
                     .toEqual(f(1, 2, 3))
             })
         })
@@ -81,7 +81,7 @@ describe("function partial(f, ...applied)", () => {
             const subject = partial(f, 1)
 
             it("should return the same result as an f function", () => {
-                expect(subject(1, 2, 3))
+                expect(subject(2, 3, 4))
                     .toEqual(f(1, 2, 3, 4))
             })
         })
@@ -121,7 +121,7 @@ describe("function partial(f, ...applied)", () => {
             const subject = partial(f, 1)
 
             it("should return the same result as an f function", () => {
-                expect(subject(1, 2, 3, 4))
+                expect(subject(2, 3, 4, 5))
                     .toEqual(f(1, 2, 3, 4, 5))
             })
         })
