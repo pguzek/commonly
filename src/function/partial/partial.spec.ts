@@ -21,11 +21,13 @@ describe("function partial(f, ...applied)", () => {
         })
 
         context("placeholder is applied", () => {
-            const subject = partial(f, undefined)
+            context("applied at 1st position", () => {
+                const subject = partial(f, undefined)
 
-            it("should return the same result as an f function", () => {
-                expect(subject(0))
-                    .toEqual(f(0))
+                it("should return the same result as an f function", () => {
+                    expect(subject(0))
+                        .toEqual(f(0))
+                })
             })
         })
     })
@@ -33,7 +35,7 @@ describe("function partial(f, ...applied)", () => {
     context("f is a binary function", () => {
         const f: BinaryFunction<number, 0, "1"> = (a, b) => a + parseInt(b, 10)
 
-        context("where one argument is applied", () => {
+        context("one argument is applied", () => {
             const subject = partial(f, 0)
 
             it("should return the same result as an f function", () => {
@@ -42,7 +44,7 @@ describe("function partial(f, ...applied)", () => {
             })
         })
 
-        context("where two arguments are applied", () => {
+        context("two arguments are applied", () => {
             const subject = partial(f, 0, "1")
 
             it("should return the same result as an f function", () => {
@@ -52,16 +54,22 @@ describe("function partial(f, ...applied)", () => {
         })
 
         context("placeholder is applied", () => {
-            it("should return the same result as an f function", () => {
+            context("applied at 1st position", () => {
                 const subject = partial(f, undefined, "1")
-                expect(subject(0))
-                    .toEqual(f(0, "1"))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject(0))
+                        .toEqual(f(0, "1"))
+                })
             })
 
-            it("should return the same result as an f function", () => {
+            context("applied at 2nd position", () => {
                 const subject = partial(f, 0, undefined)
-                expect(subject("1"))
-                    .toEqual(f(0, "1"))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject("1"))
+                        .toEqual(f(0, "1"))
+                })
             })
         })
     })
@@ -69,7 +77,7 @@ describe("function partial(f, ...applied)", () => {
     context("f is a ternary function", () => {
         const f: TernaryFunction<number, 0, "1", 1> = (a, b, c) => a + parseInt(b, 10) + c
 
-        context("where one argument is applied", () => {
+        context("one argument is applied", () => {
             const subject = partial(f, 0)
 
             it("should return the same result as an f function", () => {
@@ -78,7 +86,7 @@ describe("function partial(f, ...applied)", () => {
             })
         })
 
-        context("where two arguments are applied", () => {
+        context("two arguments are applied", () => {
             const subject = partial(f, 0, 1)
 
             it("should return the same result as an f function", () => {
@@ -87,7 +95,7 @@ describe("function partial(f, ...applied)", () => {
             })
         })
 
-        context("where three arguments are applied", () => {
+        context("three arguments are applied", () => {
             const subject = partial(f, 0, 1, 1)
 
             it("should return the same result as an f function", () => {
@@ -97,22 +105,31 @@ describe("function partial(f, ...applied)", () => {
         })
 
         context("placeholder is applied", () => {
-            it("should return the same result as an f function", () => {
+            context("applied at 1st position", () => {
                 const subject = partial(f, undefined, "1", 1)
-                expect(subject(0))
-                    .toEqual(f(0, "1", 1))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject(0))
+                        .toEqual(f(0, "1", 1))
+                })
             })
 
-            it("should return the same result as an f function", () => {
+            context("applied at 2nd position", () => {
                 const subject = partial(f, 0, undefined, 1)
-                expect(subject("1"))
-                    .toEqual(f(0, "1", 1))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject("1"))
+                        .toEqual(f(0, "1", 1))
+                })
             })
 
-            it("should return the same result as an f function", () => {
+            context("applied at 3rd position", () => {
                 const subject = partial(f, 0, "1", undefined)
-                expect(subject(1))
-                    .toEqual(f(0, "1", 1))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject(1))
+                        .toEqual(f(0, "1", 1))
+                })
             })
         })
     })
@@ -120,7 +137,7 @@ describe("function partial(f, ...applied)", () => {
     context("f is a quaternary function", () => {
         const f: QuaternaryFunction<number, 0, "1", 1, 2> = (a, b, c, d) => a + parseInt(b, 10) + c + d
 
-        context("where one argument is applied", () => {
+        context("one argument is applied", () => {
             const subject = partial(f, 0)
 
             it("should return the same result as an f function", () => {
@@ -129,7 +146,7 @@ describe("function partial(f, ...applied)", () => {
             })
         })
 
-        context("where two arguments are applied", () => {
+        context("two arguments are applied", () => {
             const subject = partial(f, 0, 1)
 
             it("should return the same result as an f function", () => {
@@ -138,7 +155,7 @@ describe("function partial(f, ...applied)", () => {
             })
         })
 
-        context("where three arguments are applied", () => {
+        context("three arguments are applied", () => {
             const subject = partial(f, 0, 1, 1)
 
             it("should return the same result as an f function", () => {
@@ -147,7 +164,7 @@ describe("function partial(f, ...applied)", () => {
             })
         })
 
-        context("where four arguments are applied", () => {
+        context("four arguments are applied", () => {
             const subject = partial(f, 0, "1", 1, 2)
 
             it("should return the same result as an f function", () => {
@@ -157,28 +174,40 @@ describe("function partial(f, ...applied)", () => {
         })
 
         context("placeholder is applied", () => {
-            it("should return the same result as an f function", () => {
+            context("applied at 1st position", () => {
                 const subject = partial(f, undefined, "1", 1, 2)
-                expect(subject(0))
-                    .toEqual(f(0, "1", 1, 2))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject(0))
+                        .toEqual(f(0, "1", 1, 2))
+                })
             })
 
-            it("should return the same result as an f function", () => {
+            context("applied at 2nd position", () => {
                 const subject = partial(f, 0, undefined, 1, 2)
-                expect(subject("1"))
-                    .toEqual(f(0, "1", 1, 2))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject("1"))
+                        .toEqual(f(0, "1", 1, 2))
+                })
             })
 
-            it("should return the same result as an f function", () => {
+            context("applied at 3rd position", () => {
                 const subject = partial(f, 0, "1", undefined, 2)
-                expect(subject(1))
-                    .toEqual(f(0, "1", 1, 2))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject(1))
+                        .toEqual(f(0, "1", 1, 2))
+                })
             })
 
-            it("should return the same result as an f function", () => {
+            context("applied at 4th position", () => {
                 const subject = partial(f, 0, "1", 1, undefined)
-                expect(subject(2))
-                    .toEqual(f(0, "1", 1, 2))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject(2))
+                        .toEqual(f(0, "1", 1, 2))
+                })
             })
         })
     })
@@ -186,7 +215,7 @@ describe("function partial(f, ...applied)", () => {
     context("f is a quinary function", () => {
         const f: QuinaryFunction<number, 0, "1", 1, 2, 3> = (a, b, c, d, e) => a + parseInt(b, 10) + c + d + e
 
-        context("where one argument is applied", () => {
+        context("one argument is applied", () => {
             const subject = partial(f, 0)
 
             it("should return the same result as an f function", () => {
@@ -195,7 +224,7 @@ describe("function partial(f, ...applied)", () => {
             })
         })
 
-        context("where two arguments are applied", () => {
+        context("two arguments are applied", () => {
             const subject = partial(f, 0, 1)
 
             it("should return the same result as an f function", () => {
@@ -204,7 +233,7 @@ describe("function partial(f, ...applied)", () => {
             })
         })
 
-        context("where three arguments are applied", () => {
+        context("three arguments are applied", () => {
             const subject = partial(f, 0, 1, 1)
 
             it("should return the same result as an f function", () => {
@@ -213,7 +242,7 @@ describe("function partial(f, ...applied)", () => {
             })
         })
 
-        context("where four arguments are applied", () => {
+        context("four arguments are applied", () => {
             const subject = partial(f, 0, 1, 1, 2)
 
             it("should return the same result as an f function", () => {
@@ -222,7 +251,7 @@ describe("function partial(f, ...applied)", () => {
             })
         })
 
-        context("where five arguments are applied", () => {
+        context("five arguments are applied", () => {
             const subject = partial(f, 0, 1, 1, 2, 3)
 
             it("should return the same result as an f function", () => {
@@ -232,34 +261,49 @@ describe("function partial(f, ...applied)", () => {
         })
 
         context("placeholder is applied", () => {
-            it("should return the same result as an f function", () => {
+            context("applied at 1st position", () => {
                 const subject = partial(f, undefined, "1", 1, 2, 3)
-                expect(subject(0))
-                    .toEqual(f(0, "1", 1, 2, 3))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject(0))
+                        .toEqual(f(0, "1", 1, 2, 3))
+                })
             })
 
-            it("should return the same result as an f function", () => {
+            context("applied at 2nd position", () => {
                 const subject = partial(f, 0, undefined, 1, 2, 3)
-                expect(subject("1"))
-                    .toEqual(f(0, "1", 1, 2, 3))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject("1"))
+                        .toEqual(f(0, "1", 1, 2, 3))
+                })
             })
 
-            it("should return the same result as an f function", () => {
+            context("applied at 3rd position", () => {
                 const subject = partial(f, 0, "1", undefined, 2, 3)
-                expect(subject(1))
-                    .toEqual(f(0, "1", 1, 2, 3))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject(1))
+                        .toEqual(f(0, "1", 1, 2, 3))
+                })
             })
 
-            it("should return the same result as an f function", () => {
+            context("applied at 4th position", () => {
                 const subject = partial(f, 0, "1", 1, undefined, 3)
-                expect(subject(2))
-                    .toEqual(f(0, "1", 1, 2, 3))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject(2))
+                        .toEqual(f(0, "1", 1, 2, 3))
+                })
             })
 
-            it("should return the same result as an f function", () => {
+            context("applied at 5th position", () => {
                 const subject = partial(f, 0, "1", 1, 2, undefined)
-                expect(subject(3))
-                    .toEqual(f(0, "1", 1, 2, 3))
+
+                it("should return the same result as an f function", () => {
+                    expect(subject(3))
+                        .toEqual(f(0, "1", 1, 2, 3))
+                })
             })
         })
     })
