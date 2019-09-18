@@ -1,23 +1,31 @@
+import isUndefined from "../../reflect/isUndefined/isUndefined"
 import CurriedFunction from "../../type/CurriedFunction"
 import VariadicFunction from "../../type/VariadicFunction"
 import partial from "../partial/partial"
+import size from "../size/size"
 
 
 
 const curry = <TResult, TParameters extends unknown[]>(
     f: VariadicFunction<TResult, TParameters>
 ): CurriedFunction<TResult, TParameters> => {
-    // @ts-ignore
-    const curried = (...varargs: TParameters) => {
-        if (varargs.length < f.length) {
-            return partial(curried, ...varargs)
+    const curried = (applied: unknown[], placeholders: number) => (...varargs: TParameters) => {
+        const combined = [ ...applied, ...varargs ]
+        for (const argument of varargs) {
+            if (isUndefined(argument)) {
+                placeholders++
+            }
+        }
+        if (size(combined) - placeholders < size(f)) {
+            return curried(combined, placeholders)
         } else {
-            return f(...varargs)
+            const parameters = combined.slice(0, size(f)),
+                replacements = combined.slice(size(f))
+            return partial(f, ...parameters)(...replacements)
         }
     }
 
-    // @ts-ignore
-    return curried
+    return curried([], 0) as CurriedFunction<TResult, TParameters>
 }
 
 

@@ -1,7 +1,7 @@
 import PartialFunction from "../../type/PartialFunction"
 import VariadicFunction from "../../type/VariadicFunction"
-import __ from "../__/__"
 import size from "../size/size"
+
 
 
 const partial = <TResult, TParameters extends unknown[], TApplied extends unknown[]>(
@@ -9,8 +9,7 @@ const partial = <TResult, TParameters extends unknown[], TApplied extends unknow
     ...applied: TApplied
 ): PartialFunction<TResult, TParameters, TApplied> => {
     const combined = [ ...applied ] as TParameters
-    // @ts-ignore
-    const partially = (...varargs) => {
+    const partially = (...varargs: unknown[]) => {
         for(let i = 0; i < size(combined); i++) {
             if (combined[i] === undefined) {
                 combined[i] = varargs.shift()
@@ -20,13 +19,9 @@ const partial = <TResult, TParameters extends unknown[], TApplied extends unknow
         return f(...combined)
     }
 
-    // @ts-ignore
-    return partially
+    return partially as PartialFunction<TResult, TParameters, TApplied>
 }
 
 
 
 export default partial
-
-
-// partial(foo, 1, __, 3)(2)

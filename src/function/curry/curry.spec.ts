@@ -22,14 +22,14 @@ describe("function curry(f)", () => {
     })
 
     context("f is a binary function", () => {
-        const f: BinaryFunction<number, number, number> = (a, b) => a + b
+        const f: BinaryFunction<number, number, string> = (a, b) => a + parseInt(b, 10)
 
         context("is not curried", () => {
             const subject = curry(f)
 
             it("should return the same result as an f function", () => {
-                expect(subject(1, 2))
-                    .toEqual(f(1, 2))
+                expect(subject(0, "1"))
+                    .toEqual(f(0, "1"))
             })
         })
 
@@ -37,8 +37,15 @@ describe("function curry(f)", () => {
             const subject = curry(f)
 
             it("should return the same result as an f function", () => {
-                expect(subject(1)(2))
-                    .toEqual(f(1, 2))
+                expect(subject(0)("1"))
+                    .toEqual(f(0, "1"))
+            })
+
+            context("with placeholder", () => {
+                it("should return the same result as an f function", () => {
+                    expect(subject(undefined)("1")(0))
+                        .toEqual(f(0, "1"))
+                })
             })
         })
     })
