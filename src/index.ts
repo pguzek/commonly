@@ -1,4 +1,4 @@
-import Reflect from "./Reflect"
+import Reflect from "./reflect"
 
 
 export {

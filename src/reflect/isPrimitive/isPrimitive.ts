@@ -8,7 +8,8 @@ import Primitive from "../../Type/Primitive"
 
 
 /**
- * Check if a given value is a {@link @commonly/type:Primitive | Primitive}.
+ * Check if a given value is
+ * a {@link @commonly/type:Primitive | Primitive}.
  *
  * @param value - is a value to check
  * @returns a boolean whether the value is a {@link @commonly/type:Primitive | Primitive} or not

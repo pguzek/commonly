@@ -1,5 +1,6 @@
 /**
- * Check if a given value is a {@link https://developer.mozilla.org/en-US/docs/Glossary/function | function}.
+ * Check if a given value is
+ * a {@link https://developer.mozilla.org/en-US/docs/Glossary/function | function}.
  *
  * @param value - is a value to check
  * @returns a boolean whether the value is a function or not
