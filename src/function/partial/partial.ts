@@ -19,6 +19,15 @@ const partial = <TResult, TParameters extends unknown[], TApplied extends unknow
         return f(...combined)
     }
 
+    Object.defineProperties(partially, {
+        length: {
+            configurable: true,
+            enumerable: false,
+            writable: false,
+            value: size(f) - size(applied.filter(argument => argument !== undefined))
+        }
+    })
+
     return partially as PartialFunction<TResult, TParameters, TApplied>
 }
 

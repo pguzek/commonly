@@ -1,10 +1,15 @@
+import CurriedUnaryFunction from "./CurriedUnaryFunction"
 import UnaryFunction from "./UnaryFunction"
 
 
 
 type CurriedBinaryFunction<TResult, TA, TB> = {
+    (a: undefined, b: TB): UnaryFunction<TResult, TA>
+    (a: TA, b: undefined): UnaryFunction<TResult, TB>
     (a: TA, b: TB): TResult
-    (a: TA): UnaryFunction<TResult, TB>
+
+    (a: undefined): CurriedBinaryFunction<TResult, TA, TB>
+    (a: TA): CurriedUnaryFunction<TResult, TB>
 }
 
 
