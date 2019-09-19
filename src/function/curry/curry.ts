@@ -8,16 +8,37 @@ import size from "../size/size"
 const curry = <TResult, TParameters extends unknown[]>(
     f: VariadicFunction<TResult, TParameters>
 ): CurriedFunction<TResult, TParameters> => {
-    const curried = (df: VariadicFunction<TResult, TParameters>) => (...varargs: TParameters) => {
-        const partially = partial(df, ...varargs)
+    const curried = (...varargs: TParameters) => {
+        const partially = partial(f, ...varargs)
         if (size(partially) > 0) {
-            return curried(partially)
+            return curry(partially)
         } else {
             return partially(...varargs)
         }
     }
 
-    return curried(f) as unknown as CurriedFunction<TResult, TParameters>
+    Object.defineProperties(curried, {
+        name: {
+            value: f.name,
+            configurable: true,
+            enumerable: false,
+            writable: false
+        },
+        length: {
+            configurable: true,
+            enumerable: false,
+            writable: false,
+            value: size(f)
+        },
+        toString: {
+            value: f.toString.bind(f),
+            configurable: true,
+            enumerable: false,
+            writable: true
+        }
+    })
+
+    return curried as unknown as CurriedFunction<TResult, TParameters>
 }
 
 
