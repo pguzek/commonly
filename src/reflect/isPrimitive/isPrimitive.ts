@@ -3,7 +3,7 @@ import isNil from "../isNil/isNil"
 import isNumber from "../isNumber/isNumber"
 import isString from "../isString/isString"
 import isSymbol from "../isSymbol/isSymbol"
-import Primitive from "../../Type/Primitive"
+import Primitive from "../../type/Primitive"
 
 
 

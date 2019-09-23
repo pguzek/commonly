@@ -1,6 +1,6 @@
 import isNull      from "../isNull/isNull"
 import isUndefined from "../isUndefined/isUndefined"
-import Nil         from "../../Type/Nil"
+import Nil         from "../../type/Nil"
 
 
 

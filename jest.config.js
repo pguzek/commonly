@@ -20,7 +20,7 @@ module.exports = {
     },
 
     collectCoverageFrom: [
-        "src/**/*.ts", "!src/Type/**/*.ts", "!src/**/index.ts"
+        "src/**/*.ts", "!src/type/**/*.ts", "!src/**/index.ts"
     ],
 
     setupFiles: [

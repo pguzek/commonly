@@ -35,5 +35,19 @@ export {
 }
 
 export default {
+    isBoolean,
+    isError,
+    isFunction,
+    isMap,
+    isNil,
+    isNull,
+    isNumber,
+    isObject,
+    isPrimitive,
+    isPromise,
+    isRegExp,
+    isSet,
+    isString,
+    isSymbol,
     isUndefined
 }

@@ -5,9 +5,9 @@
   "main": "index.js",
   "typings": "./lib/Reflect/index.d.ts",
   "scripts": {
-    "compile": "npm run clean && tsc --build",
+    "compile": "npm run clean && tsc --build && cpx ./src/**/*.json ./lib",
     "clean": "tsc --build --clean",
-    "docs": "npm run compile && api-extractor run --local --verbose && api-documenter markdown --input-folder ./temp --output-folder ./docs",
+    "docs": "npm run compile && ..\\commonly-builder\\bin\\run docs",
     "test": "jest",
     "test:watch": "jest --watch",
     "coverage": "jest --coverage"
@@ -28,6 +28,7 @@
   "devDependencies": {
     "@types/jest": "24.0.18",
     "@types/jest-plugin-context": "2.9.2",
+    "cpx": "1.5.0",
     "jest": "24.9.0",
     "jest-plugin-context": "2.9.0",
     "tslib": "1.10.0",
