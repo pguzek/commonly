@@ -7,7 +7,7 @@
  *
  * @example
  * ```
- *  import { isMap } from "commonly/reflect"
+ *  import { isMap } from "@commonly/reflect"
  *
  *  isMap(new Map())     //-> true
  *  isMap(NaN)           //-> false

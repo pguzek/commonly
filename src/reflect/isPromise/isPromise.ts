@@ -7,7 +7,7 @@
  *
  * @example
  * ```
- *  import { isPromise } from "commonly/reflect"
+ *  import { isPromise } from "@commonly/reflect"
  *
  *  isPromise(new Promise())         //-> true
  *  isPromise(Promise.resolve())     //-> true

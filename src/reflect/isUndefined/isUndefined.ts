@@ -7,7 +7,7 @@
  *
  * @example
  * ```
- *  import { isUndefined } from "commonly/reflect"
+ *  import { isUndefined } from "@commonly/reflect"
  *
  *  isUndefined(undefined)   //-> true
  *  isUndefined(null)        //-> false

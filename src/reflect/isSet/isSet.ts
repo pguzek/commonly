@@ -7,7 +7,7 @@
  *
  * @example
  * ```
- *  import { isSet } from "commonly/reflect"
+ *  import { isSet } from "@commonly/reflect"
  *
  *  isSet(new Set())     //-> true
  *  isSet(NaN)           //-> false

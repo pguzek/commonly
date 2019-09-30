@@ -7,7 +7,7 @@
  *
  * @example
  * ```
- *  import { isError } from "commonly/reflect"
+ *  import { isError } from "@commonly/reflect"
  *
  *  isError(new Error())    //-> true
  *  isError(TypeError())    //-> true

@@ -16,7 +16,7 @@ import Primitive from "../../type/Primitive"
  *
  * @example
  * ```
- *  import { isPrimitive } from "commonly/reflect"
+ *  import { isPrimitive } from "@commonly/reflect"
  *
  *  isPrimitive(undefined)   //-> true
  *  isPrimitive(null)        //-> true

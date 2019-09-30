@@ -13,7 +13,7 @@ import Nil         from "../../type/Nil"
  *
  * @example
  * ```
- *  import { isNil } from "commonly/reflect"
+ *  import { isNil } from "@commonly/reflect"
  *
  *  isNil(undefined)   //-> true
  *  isNil(null)        //-> true

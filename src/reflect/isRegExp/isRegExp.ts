@@ -7,7 +7,7 @@
  *
  * @example
  * ```
- *  import { isRegExp } from "commonly/reflect"
+ *  import { isRegExp } from "@commonly/reflect"
  *
  *  isRegExp(new RegExp("ab+c"))        //-> true
  *  isRegExp(/ab+c/)                    //-> true

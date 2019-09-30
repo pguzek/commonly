@@ -7,7 +7,7 @@
  *
  * @example
  * ```
- *  import { isSymbol } from "commonly/reflect"
+ *  import { isSymbol } from "@commonly/reflect"
  *
  *  isSymbol(Symbol())      //-> true
  *  isSymbol(NaN)           //-> false

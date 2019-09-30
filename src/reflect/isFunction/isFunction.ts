@@ -7,7 +7,7 @@
  *
  * @example
  * ```
- *  import { isFunction } from "commonly/reflect"
+ *  import { isFunction } from "@commonly/reflect"
  *
  *  isFunction(Math.add)        //-> true
  *  isFunction(() => void 0))   //-> true

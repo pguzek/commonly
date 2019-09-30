@@ -7,7 +7,7 @@
  *
  * @example
  * ```
- *  import { isString } from "commonly/reflect"
+ *  import { isString } from "@commonly/reflect"
  *
  *  isString("string")   //-> true
  *  isString(null)       //-> false

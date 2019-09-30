@@ -7,7 +7,7 @@
  *
  * @example
  * ```
- *  import { isNumber } from "commonly/reflect"
+ *  import { isNumber } from "@commonly/reflect"
  *
  *  isNumber(0)           //-> true
  *  isNumber(NaN)         //-> true

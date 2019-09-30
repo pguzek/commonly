@@ -7,7 +7,7 @@
  *
  * @example
  * ```
- *  import { isBoolean } from "commonly/reflect"
+ *  import { isBoolean } from "@commonly/reflect"
  *
  *  isBoolean(true)     //-> true
  *  isBoolean(false)    //-> true

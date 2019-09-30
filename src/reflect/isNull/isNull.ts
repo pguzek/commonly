@@ -7,7 +7,7 @@
  *
  * @example
  * ```
- *  import { isNull } from "commonly/reflect"
+ *  import { isNull } from "@commonly/reflect"
  *
  *  isNull(null)        //-> true
  *  isNull(undefined)   //-> false

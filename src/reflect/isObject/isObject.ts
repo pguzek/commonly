@@ -11,7 +11,7 @@ import isNull from "../isNull/isNull"
  *
  * @example
  * ```
- *  import { isObject } from "commonly/reflect"
+ *  import { isObject } from "@commonly/reflect"
  *
  *  isObject(new Object())      //-> true
  *  isObject({})                //-> true
