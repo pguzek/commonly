@@ -7,6 +7,7 @@ export type TapFunction = {
     <TValue>(interceptor: (value: TValue) => TValue): (value: TValue) => TValue
 }
 
+
 /**
  * Intercepts a given value and then returns that value.
  * It lets you "tap into" a function chain, in order to perform operations on intermediate results within that chain.
@@ -22,4 +23,4 @@ const tap = <TValue>(interceptor: (value: TValue) => TValue, value: TValue): TVa
 
 
 
-export default <TapFunction>curry(tap)
+export default curry(tap) as TapFunction
