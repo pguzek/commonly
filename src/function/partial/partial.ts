@@ -11,6 +11,7 @@ import size from "../size/size"
  *
  * @param f - is a function to partially apply list of arguments to
  * @param applied - is a list of arguments to be prepended to an f function
+ * @return a partially applied f function
  */
 const partial = <TResult, TParameters extends unknown[], TApplied extends unknown[]>(
     f: VariadicFunction<TResult, TParameters>,
