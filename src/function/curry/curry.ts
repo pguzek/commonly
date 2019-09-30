@@ -4,7 +4,12 @@ import partial from "../partial/partial"
 import size from "../size/size"
 
 
-
+/**
+ * Preforms a {@link https://en.wikipedia.org/wiki/Currying | currying} of an f function.
+ *
+ * @param f - is a function to be curried
+ * @return a curried version of an f function
+ */
 const curry = <TResult, TParameters extends unknown[]>(
     f: VariadicFunction<TResult, TParameters>
 ): CurriedFunction<TResult, TParameters> => {
