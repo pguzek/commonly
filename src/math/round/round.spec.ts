@@ -7,7 +7,6 @@ describe(`function round(precision = 0, number)`, () => {
 
     context(`precision is not defined`, () => {
         it(`should round the number up to a precision`, () => {
-
             expect(round(0, number))
                 .toEqual(0)
         })
