@@ -14,6 +14,13 @@ export type FunctionSignature = {
  * @param minuend - is a quantity from which another (the subtrahend) is subtracted
  * @param subtrahend - is a quantity which is subtracted from another (the minuend)
  * @return a difference
+ *
+ * @example
+ * ```
+ *  import { subtract } from "@commonly/math"
+ *
+ *  subtract(3, 2)  // -> 1
+ * ```
  */
 const subtract = (minuend: number, subtrahend: number) => {
     return minuend - subtrahend

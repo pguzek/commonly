@@ -14,6 +14,12 @@ export type FunctionSignature = {
  * @param augend - is the first of two addends
  * @param addend - is the second of two addends
  * @return a sum
+ *
+ * @example
+ * ```
+ *  import { add } from "@commonly/math"
+ *
+ *  add(3, 2)   // -> 5
  */
 const add = (augend: number, addend: number) => {
     return augend + addend
