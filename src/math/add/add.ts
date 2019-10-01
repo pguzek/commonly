@@ -2,7 +2,7 @@ import curry from "../../function/curry/curry"
 
 
 
-type AddFunction = {
+export type FunctionSignature = {
     (augend: number, addend: number): number
     (augend: number): (addend: number) => number
 }
@@ -21,4 +21,4 @@ const add = (augend: number, addend: number) => {
 
 
 
-export default curry(add) as AddFunction
+export default curry(add) as FunctionSignature

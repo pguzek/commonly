@@ -2,7 +2,7 @@ import curry from "../curry/curry"
 
 
 
-export type TapFunction = {
+export type FunctionSignature = {
     <TValue>(interceptor: (value: TValue) => TValue, value: TValue): TValue
     <TValue>(interceptor: (value: TValue) => TValue): (value: TValue) => TValue
 }
@@ -23,4 +23,4 @@ const tap = <TValue>(interceptor: (value: TValue) => TValue, value: TValue): TVa
 
 
 
-export default curry(tap) as TapFunction
+export default curry(tap) as FunctionSignature

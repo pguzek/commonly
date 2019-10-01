@@ -2,7 +2,7 @@ import curry from "../../function/curry/curry"
 
 
 
-type SubtractFunction = {
+export type FunctionSignature = {
     (minuend: number, subtrahend: number): number
     (minuend: number): (subtrahend: number) => number
 }
@@ -21,4 +21,4 @@ const subtract = (minuend: number, subtrahend: number) => {
 
 
 
-export default curry(subtract) as SubtractFunction
+export default curry(subtract) as FunctionSignature
