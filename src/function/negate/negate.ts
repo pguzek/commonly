@@ -7,6 +7,14 @@ import VariadicFunction from "../../type/VariadicFunction"
  *
  * @param predicate - is a function to be negated
  * @return a negated version of a predicate function
+ *
+ * @example
+ * ```
+ *  import { negate } from "@commonly/function"
+ *
+ *  const isUnsealed = negate(Object.isSealed)
+ *  isUnsealed(window)  // -> true
+ * ```
  */
 const negate = <TResult, TParameters extends unknown[]>(
     predicate: VariadicFunction<TResult, TParameters>

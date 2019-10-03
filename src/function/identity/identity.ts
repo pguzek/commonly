@@ -5,6 +5,13 @@
  *
  * @param value - is any given value
  * @return a passed in value
+ *
+ * @example
+ * ```
+ *  import { identity } from "@commonly/function"
+ *
+ *  identity(2)     // -> 2
+ * ```
  */
 const identity = <TValue>(value: TValue): TValue => {
     return value
