@@ -20,6 +20,7 @@ export type FunctionSignature = {
  *  import { add } from "@commonly/math"
  *
  *  add(3, 2)   // -> 5
+ * ```
  */
 const add = (augend: number, addend: number) => {
     return augend + addend

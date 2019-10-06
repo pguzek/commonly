@@ -22,8 +22,9 @@ export type FunctionSignature = {
  *  multiply(3, 2)  // -> 6
  * ```
  */
-const multiply = (multiplier: number, multiplicand: number) =>
-    multiplier * multiplicand
+const multiply = (multiplier: number, multiplicand: number) => {
+    return multiplier * multiplicand
+}
 
 
 

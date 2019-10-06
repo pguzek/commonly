@@ -22,8 +22,9 @@ export type FunctionSignature = {
  *  divide(3, 2)    // -> 1.5
  * ```
  */
-const divide = (dividend: number, divisor: number) =>
-    dividend / divisor
+const divide = (dividend: number, divisor: number) => {
+    return dividend / divisor
+}
 
 
 
